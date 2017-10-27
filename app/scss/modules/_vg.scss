@@ -1,0 +1,25 @@
+/* Start of our percfect circles */
+
+//This centers everything on the viewport
+.container 
+ {
+@extend %center;
+ }
+
+ //This creates three diferent sized circles, just enter size in the first mixin.
+ //In the second mixin, enter background color, and hover text color.
+ // Click the circles to change background color!
+.red-circle{
+    @include circle(50px);
+    @include circle2(red,maroon);
+}
+
+.blue-circle{
+    @include circle(75px);
+    @include circle2(blue,purple);
+}
+
+.green-circle {
+    @include circle(100px);
+    @include circle2(green,yellow);
+}

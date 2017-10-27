@@ -1,3 +1,28 @@
+//Mixing for VG
+// This one creates a perfectly round circle in Safari.
+// If you skip the %1 padding, you can divide width/2 and put that into border-radius for a round circle
+@mixin circle($width) {
+  width: $width;
+  height: $width;
+  line-height: $width;
+  border-radius: $width;
+}
+
+//This mixin takes in a bg-color and a hover text color.
+// BG-color is changed on active. Txt-color changes on hover
+@mixin circle2($color, $hovercolor) {
+  background-color: $color;
+     &:hover {
+       transition: 0.3s;
+       color: lighten($hovercolor, 18%);
+     }
+     &:active {
+      background-color: lighten($color, 25%);
+     }
+     margin-right: 10px;
+     @extend %btn;
+}
+
 //Mixin using breakpoint map 
 @mixin respond-to($breakpoint) {
   // If the key exists in the map

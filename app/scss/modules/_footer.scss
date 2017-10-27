@@ -1,4 +1,15 @@
+/* General styling of the footer and the title*/
 footer {
     grid-area: footer;
     background-color: black;
+    .footer-title {
+        color: map-get($map: $site-colors, $key:header-txt);
+        font-family: $header;
+        text-transform: uppercase;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        font-size: $mobile-header;
+    }
 }
