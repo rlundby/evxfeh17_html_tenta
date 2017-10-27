@@ -1,0 +1,29 @@
+.hero {
+    text-align: center;   // Aligning text on mobile, since I'm not using flex there
+    background-image: url('https://raw.githubusercontent.com/mig-25/evxfeh17_html_tenta/master/app/images/scotland.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 250px;
+    .hero-title {
+        color: white;
+        font-family: $fancy;
+        font-size: $big;
+    }
+    .sub-title {
+        color: white;
+        font-family: $header;
+        font-size: $mobile-medium;
+    }
+    @include respond-to('large') {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  // Aligning text using flex
+    align-items: center;     // Aligning text using flex
+    width: auto;
+    min-height: none;
+    grid-area: hero;
+
+    } 
+  }

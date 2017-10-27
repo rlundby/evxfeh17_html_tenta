@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+/* Here I'm using my color map to set a body wide background colors. */
+body {
+    background-color: map-get($map: $site-colors, $key:main-bg);
+}
+
+/* Universal styling of elements */
+a {text-decoration: none;}
+li {list-style: none;}

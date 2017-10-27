@@ -1,0 +1,106 @@
+// This is the styling for the header - including the navigation bar
+
+/* Header styling */
+header {
+    background-color: map-get($map: $site-colors, $key:header-bg);
+    .header-title {
+        color: map-get($map: $site-colors, $key:header-txt);
+        font-family: $header;
+        text-transform: uppercase;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 40px;
+        padding-bottom: 10px;
+        font-size: $mobile-header;
+    }
+}
+/* Styling of the 3 veritcal lines that creates menu icon */
+.menu-icon {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+}
+/* Styling of the menu*/
+// Here I keep the general styling of the nav-bar
+nav {
+    background-color: map-get($map: $site-colors, $key:nav);   // Here I'm using my site-colors map, in case I want to change the theme later on.
+    width: em(300px);  // Here I'm using a function that lets me write in px, but converts it to em in my css file.
+    max-width: 60em; // I'm setting the max-width as per instructed in the video;
+    height: 100vh;  // Sets the nav to fit the entire screen
+    padding-top: 1.5em;
+    .close {
+        text-align: right;
+        display: block;
+        text-decoration: none;
+        font-size: $big; 
+        position: relative;
+        top: -30px;
+      }
+      a {
+          color: white;
+          font-size: $mobile-medium;    // Setting my font-size
+          line-height: 1.5;
+          padding: 20px;
+          font-family: $links;   // Here I'm using a font family variable
+      }
+  }
+  // Creating hover effects on links inside the li using child selector//
+  li {
+      >a:hover{
+        color:red;
+      }
+  }
+  //This part creates the off-canvas effect of the navbar
+#nav{
+    transition: transform .3s ease-in-out;
+    top: 0;
+    bottom: 0;   
+    position: fixed;
+    @include respond-to('large') {position: static;}   // I remove position fixed on desktop
+    left: -340px;
+    @include respond-to('large') {left: 0;} // Resetting left for desktop
+    &:target {
+        transform: translateX(340px);
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
+/* DESKTOP STYLING */
+/* Placing header on the main grid */
+header {
+    grid-area: header;
+    .header-title {
+        padding: 0;
+        font-size: $medium;
+    }
+}
+/* Removs toggle on desktop */
+.toggle, .menu-icon{
+    @include respond-to('large') {
+    display: none;
+    }   
+}
+/* Desktop styling for the navbar */
+nav {
+    @include respond-to('large') {
+        background: none;
+        max-width: none;   // I remove max-width so I can center the menu
+        width: auto;   // I turn both these valus into auto
+        height: auto;
+    ul {
+        display: flex;
+        justify-content: center;
+        }
+    .close {
+        display:none;
+    }
+    }
+}

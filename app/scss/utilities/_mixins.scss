@@ -1,4 +1,4 @@
-///Mixin using breakpoint map 
+//Mixin using breakpoint map 
 @mixin respond-to($breakpoint) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
@@ -15,14 +15,12 @@
   }
 }
 
+ 
+
 ///Mixin for page background
-/// @param {url} $imagepath - set the url of the page-bg
 @mixin page-bg($imagepath,$bgrepeat:no-repeat,$bgattachment:fixed,$bgsize:cover) {
-	
-		color: map-get($color, bright);
-  		background: map-get($color, accent2);
-        background-image: url($imagepath);
-        background-repeat: $bgrepeat;
+    background-image: url($imagepath);
+    background-repeat: $bgrepeat;
 		background-attachment:$bgattachment;
 		background-size:$bgsize;
     

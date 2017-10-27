@@ -1,1 +1,1 @@
-utilities partials
+// Utilities and other helpful things

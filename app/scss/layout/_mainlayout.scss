@@ -1,0 +1,18 @@
+// This is the main layout for the website 
+// Here you will ONLY find the body grid layout
+// Smaller grids can be found in modules
+
+body {
+    display: flex;
+    flex-direction: column;
+    @include respond-to ('large') {
+    display: grid;
+    // The grid is written in shorthand
+    grid-template: "header header header header" 10em "hero hero hero hero" 50vh " . main sidebar . " auto "footer footer footer footer" 10em / 1fr minmax(30em, 5fr) minmax(10em, 1fr) 1fr;
+    grid-column-gap: 1.5em;
+    .main {
+        grid-area: main;
+    }
+    }
+    
+}
