@@ -7,6 +7,7 @@
 }
 /* Styling for portfolio */
 .portfolio {
+    color: lightgray;
     @include respond-to('large'){
         display: grid;
         grid-auto-flow: dense;
@@ -33,24 +34,22 @@
     grid-row: 4;
     grid-column: 3;
 }
+
+// For the effect - im using a filter and background image :)
 .with-image {
+    background-image: url("https://raw.githubusercontent.com/mig-25/evxfeh17_html_tenta/master/app/images/o-SCOTLAND-facebook1.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     grid-column: 3/6;
     grid-row: 1/4;
-    @include respond-to ('large') {
-        &:before {
-            opacity: 0.8;
-            transition: 0.3s;
+    filter:brightness(30%);
+    transition: 0.3s;
+        &:hover {
+        filter:brightness(100%);
         }
-    } 
 }
-.portf-img {
-    display: block;
-    border: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
 
-}
 .medium {
 grid-column: span 2;
 grid-row: span 2;
